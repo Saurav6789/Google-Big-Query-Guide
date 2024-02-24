@@ -68,7 +68,7 @@ Please note that you will be provide with free 300$ credits and then you will be
 
 ### Loading Data into Bigquery 
 
-1. Navigate to the project on the Navigation Panel. Click on "Create Data Set"
+1. Navigate to the project on the Navigation Panel under the explorer section. Click on "Create Data Set"
   ![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/399d1edf-3de3-452a-99e9-c9749d9905e7)
 
 2. Create Dataset window will open on the right side
@@ -81,4 +81,43 @@ Please note that you will be provide with free 300$ credits and then you will be
    - Dataset location type and region can't be changed once set.
    - Always locate the datset in the same region as the external dataset or destination
    - Always choose default table expiration until you are working on a temporary table
+   - The Created dataset will be seen under the project under the explorer
+
+3. Create or Upload Table in the Dataset
+
+   - Tables in the datset can be of different types
+     a) Internal tables which are stored in the BigQuery
+     b) External Tables which are stored in the Bucket,Google drive, Cloud SQL or Bigtable
+     c) Views which are the virtual tables defined by the Bigquery query.
+
+   - Several ways to load data into BigQuery
+     a) Loading the data in batch in the csv , json or AVRO file.
+     b) Saving the query results to a table
+     c) Stream individual or batches of records into Bigquery.
+     d) Load data from other services like google drive,google analytics etc.
+  
+  - Create table from the Dataset
+
+![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/3582016e-4bf8-494a-bc6c-f0f9fe4792e8)
+
+  - We can finally create the table by filling the details in the below page
+    
+![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/7576ba97-8ce9-44a6-bd9a-503d7846da0d)
+
+
+  Please note the following points 
+
+  a) We can create an empty table,upload the table from google drive , BigTable , Amzaon s3 , cloud storage etc.
+  
+  b) Can use CSV, AVRO, JSON, Parquet or ORC files for new table.
+  
+  c) We can also specify the schema.
+  
+  d) Partitioning can be done to reduce the scan size , helpful for dates and integer ranges.
+  
+  e) Clustering can be done to reduce the scan size, sorting the data in storage , works best for strings.
+  
+  f) In the Advanced options , we can also append or overwrite to the existing table. 
+  
+
 
