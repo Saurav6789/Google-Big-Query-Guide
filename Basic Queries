@@ -1,0 +1,35 @@
+/* 
+Basic BigQuery SQL queries 
+*/
+
+-- Select statement for getting the whole data 
+SELECT * FROM `bigquery-public-data.chicago_crime.crime`
+
+--Select statement for to get only specified column names in the query
+SELECT case_number,primary_type FROM  `bigquery-public-data.chicago_crime.crime`
+
+-- where clause to specify the filtering condition
+SELECT * FROM `bigquery-public-data.chicago_crime.crime` WHERE primary_type ='ROBBERY'
+
+-- order by clause to sort the results based on specify columns 
+SELECT * FROM `bigquery-public-data.chicago_crime.crime` ORDER BY date DESC,year ASC
+
+-- LIMIT and offset 
+
+SELECT * FROM `bigquery-public-data.chicago_crime.crime`  LIMIT 1000 OFFSET 10
+
+-- Explanation:
+-- - The LIMIT clause restricts the number of rows returned in the result set.
+-- - The OFFSET clause skips a specified number of rows before returning the result set.
+-- - Useful for implementing pagination or sampling large datasets.
+
+-- GROUP BY and HAVING:
+
+SELECT primary_type, COUNT(*) AS COUNT FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type HAVING count >10 
+
+-- Explanation:
+-- - The GROUP BY clause groups rows that have the same values into summary rows.
+-- - The HAVING clause filters group rows based on specified conditions.
+-- - Used in combination with aggregate functions to perform group-level calculations.
+
+
