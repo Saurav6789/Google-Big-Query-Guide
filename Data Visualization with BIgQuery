@@ -1,0 +1,14 @@
+-- Basic Bar chart
+SELECT primary_type,COUNT(*) AS num_crime_type FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type ORDER BY num_crime_type DESC
+
+-- Time Series line chart
+SELECT DATE(date) AS crime_date, COUNT(*) FROM `bigquery-public-data.chicago_crime.crime`  GROUP BY crime_date ORDER BY crime_date
+
+-- -- Example 3: Pie Chart
+SELECT primary_type, SUM(community_area) AS total_community_area FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type ORDER BY total_community_area DESC
+
+-- Scatter plot 
+SELECT ward,community_area FROM `bigquery-public-data.chicago_crime.crime`
+
+-- GEO MAP 
+SELECT latitude AS latitude,longitude AS longitude,COUNT(*) AS num FROM `bigquery-public-data.chicago_crime.crime` WHERE latitude IS NOT NULL AND longitude IS NOT NULL GROUP BY latitude,longitude;
