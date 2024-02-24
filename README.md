@@ -66,3 +66,19 @@ Please note that you will be provide with free 300$ credits and then you will be
 ![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/ef5376bb-494c-4f9c-a860-962724dc998d)
 
 
+### Loading Data into Bigquery 
+
+1. Navigate to the project on the Navigation Panel. Click on "Create Data Set"
+  ![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/399d1edf-3de3-452a-99e9-c9749d9905e7)
+
+2. Create Dataset window will open on the right side
+   
+  ![image](https://github.com/Saurav6789/Google-Big-Query-Guide/assets/45622711/e911a428-61ff-4b0c-8c24-610bd8942b59)
+
+
+   Please consider following before creating the dataset 
+   - Dataset names are case sesitive , similar names of the datset with different case can co exist.
+   - Dataset location type and region can't be changed once set.
+   - Always locate the datset in the same region as the external dataset or destination
+   - Always choose default table expiration until you are working on a temporary table
+
