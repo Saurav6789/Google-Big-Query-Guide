@@ -15,3 +15,17 @@ BigQuery is a fully managed, serverless data warehouse solution provided by Goog
 | **Security**       | Built-in security features, including IAM and encryption | Security measures need to be implemented and managed |
 
 
+## Getting Started 
+
+Please perform the following steps :- 
+
+1. Navigate to the following link [BigQuery-Start-page](https://cloud.google.com/bigquery?hl=en) . Click on the following button "Try BigQuery Free"
+2. You will be navigated to the following Sign up page [Sign Up](https://console.cloud.google.com/freetrial/signup/tos)
+3. On the Billing page [Billing_Page](https://console.cloud.google.com/freetrial/signup/billing/NL). Enter the details and click on "Start Free"
+
+Please note that you will be provide with free 300$ credits and then you will be charged accordingly. No automatic charges are deducted. 
+
+
+
+
+
