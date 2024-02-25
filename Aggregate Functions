@@ -1,0 +1,49 @@
+-- DISTINCT : Returns unique values in a specified column or expression
+
+SELECT DISTINCT primary_type FROM `bigquery-public-data.chicago_crime.crime`
+
+-- AVG : Calculates the average of numeric values in a specified column.
+
+SELECT AVG(latitude) FROM `bigquery-public-data.chicago_crime.crime`
+
+-- MIN: Returns the minimum value in a specified column.
+
+SELECT MIN(date) FROM `bigquery-public-data.chicago_crime.crime`
+
+-- MAX: Returns the maximum value in a specified column.
+
+SELECT MAX(arrest) FROM `bigquery-public-data.chicago_crime.crime`
+
+-- SUM: Calculates the sum of numeric values in a specified column.
+
+SELECT SUM(beat) FROM `bigquery-public-data.chicago_crime.crime`
+
+-- COUNT: Returns the number of rows that match the specified criteria.
+
+SELECT COUNT(*) FROM `bigquery-public-data.chicago_crime.crime`
+
+-- STRING_AGG: Concatenates the values of string expressions and separates them with a specified delimiter.
+
+SELECT primary_type, STRING_AGG(description, ', ') AS combined_descriptions FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type
+
+-- ARRAY_AGG: Aggregates values into an array.
+
+SELECT primary_type, ARRAY_AGG(description) AS description_array FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type
+
+-- APPROX_QUANTILES: Computes approximate quantiles at specified probabilities.
+
+SELECT primary_type, APPROX_QUANTILES(latitude, 100) AS latitude_quantiles FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type
+
+-- CORR: Calculates the Pearson correlation coefficient between two numeric columns.
+
+SELECT CORR(latitude, longitude) AS correlation FROM `bigquery-public-data.chicago_crime.crime`
+
+-- BIT_COUNT: Returns the number of bits set to 1 in a numeric expression.
+
+SELECT primary_type, BIT_COUNT(beat) AS beat_bit_count FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type
+
+-- ARRAY_LENGTH: Returns the number of elements in an array expression.
+
+SELECT primary_type, ARRAY_LENGTH(ARRAY_AGG(description)) AS description_count FROM `bigquery-public-data.chicago_crime.crime` GROUP BY primary_type
+
+
