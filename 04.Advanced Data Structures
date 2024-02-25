@@ -1,0 +1,18 @@
+-- STRUCT : Represents a structured data type, similar to a struct in programming languages. It allows grouping related fields together.
+
+SELECT STRUCT(primary_type AS crime_type, description AS crime_description) AS crime_info FROM `bigquery-public-data.chicago_crime.crime` LIMIT 10
+
+-- ARRAY: Represents an ordered list of elements of the same data type, allowing storing multiple values in a single field.
+
+SELECT date,ARRAY[primary_type, description] AS crime_info FROM `bigquery-public-data.chicago_crime.crime` LIMIT 10
+
+-- REPEATED Fields:  Similar to ARRAY, represents a list of elements of the same data type. It can be used directly in table schemas without explicitly defining them as an array.
+
+SELECT date,primary_type, ARRAY_AGG(description) AS descriptions FROM `bigquery-public-data.chicago_crime.crime` GROUP BY date, primary_type LIMIT 10
+
+-- STRUCT within ARRAY: Allows nesting of structured data types within arrays, providing hierarchical organization of data.
+
+SELECT date,ARRAY<STRUCT(primary_type AS crime_type, description AS crime_description)> AS crime_info FROM `bigquery-public-data.chicago_crime.crime` LIMIT 10
+
+
+
