@@ -1,0 +1,37 @@
+-- CURRENT_DATE(): Returns the current date in the UTC timezone.
+
+SELECT CURRENT_DATE() AS current_date;
+
+
+-- DATE(): Extracts the date part from a datetime expression.
+
+SELECT DATE(starttime) AS trip_date 
+FROM `bigquery-public-data.new_york_citibike.citibike_trips` 
+LIMIT 10;
+
+-- EXTRACT(): Extracts parts (e.g., year, month, day) from a datetime expression.
+
+SELECT EXTRACT(YEAR FROM starttime) AS year,
+       EXTRACT(MONTH FROM starttime) AS month,
+       EXTRACT(DAY FROM starttime) AS day
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+LIMIT 10;
+
+-- DATE_ADD() and DATE_SUB(): Adds or subtracts days, months, or years from a date.
+
+SELECT DATE_ADD(starttime, INTERVAL 7 DAY) AS trip_date_plus_7_days
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+LIMIT 10;
+
+-- TIMESTAMP_TRUNC(): Truncates a timestamp to a specified level of granularity (e.g., day, hour, minute).
+
+SELECT TIMESTAMP_TRUNC(starttime, HOUR) AS truncated_starttime
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+LIMIT 10;
+
+-- TIMESTAMP_DIFF(): Calculates the difference between two timestamps.
+
+SELECT TIMESTAMP_DIFF(endtime, starttime, MINUTE) AS trip_duration_minutes
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+LIMIT 10;
+
