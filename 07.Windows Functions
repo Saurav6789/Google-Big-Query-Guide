@@ -1,0 +1,52 @@
+-- ROW_NUMBER():Assigns a unique number to each row within a partition, starting from 1
+
+SELECT *,
+       ROW_NUMBER() OVER (ORDER BY starttime) AS row_number
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- RANK(): Assigns a unique rank to each row within a partition, with equal values receiving the same rank.
+
+SELECT *,
+       RANK() OVER (ORDER BY starttime) AS rank
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- DENSE_RANK(): Similar to RANK(), but the ranks are consecutive integers without gaps.
+
+SELECT *,
+       DENSE_RANK() OVER (ORDER BY starttime) AS dense_rank
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- NTILE(): Divides the rows into a specified number of equally sized groups, assigning a bucket number to each row.
+
+SELECT *,
+       NTILE(4) OVER (ORDER BY starttime) AS quartile
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- LAG(): Returns the value of a column from a preceding row in the partition.
+
+SELECT starttime,
+       LAG(starttime) OVER (ORDER BY starttime) AS lag_starttime
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- LEAD(): Returns the value of a column from a following row in the partition.
+
+SELECT starttime,
+       LEAD(starttime) OVER (ORDER BY starttime) AS lead_starttime
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+-- FIRST_VALUE(): Returns the first value of a column within the partition.
+
+SELECT starttime,
+       FIRST_VALUE(starttime) OVER (ORDER BY starttime) AS first_starttime
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+
+-- LAST_VALUE(): Returns the last value of a column within the partition.
+
+SELECT starttime,
+       LAST_VALUE(starttime) OVER (ORDER BY starttime ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_starttime
+FROM `bigquery-public-data.new_york_citibike.citibike_trips`;
+
+
+
+
