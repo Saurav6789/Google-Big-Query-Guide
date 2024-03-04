@@ -1,0 +1,36 @@
+-- Inner Join: An inner join returns only the rows that have matching values in both tables.
+
+SELECT *
+FROM `bigquery-public-data.samples.natality` AS natality
+INNER JOIN `bigquery-public-data.samples.shakespeare` AS shakespeare
+ON natality.state = shakespeare.word;
+
+
+-- Left Join: A left join returns all rows from the left table, and the matched rows from the right table. If there are no matching rows in the right table, it returns NULL values.
+
+SELECT *
+FROM `bigquery-public-data.samples.natality` AS n
+LEFT JOIN `bigquery-public-data.samples.shakespeare` AS s
+ON n.state = s.word;
+
+
+-- Right Join: A right join returns all rows from the right table, and the matched rows from the left table. If there are no matching rows in the left table, it returns NULL values.
+
+SELECT *
+FROM `bigquery-public-data.samples.natality` AS n
+RIGHT JOIN `bigquery-public-data.samples.shakespeare` AS s
+ON n.state = s.word;
+
+--  Full Outer Join: A full outer join returns all rows from both tables and NULL values where there is no match.
+
+SELECT *
+FROM `bigquery-public-data.samples.natality` AS n
+FULL OUTER JOIN `bigquery-public-data.samples.shakespeare` AS s
+ON n.state = s.word;
+
+
+-- Cross Join: A cross join returns the Cartesian product of the two tables, meaning each row from the first table is combined with every row from the second table.
+
+SELECT *
+FROM `bigquery-public-data.samples.natality` AS n
+CROSS JOIN `bigquery-public-data.samples.shakespeare` AS s;
