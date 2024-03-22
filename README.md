@@ -139,7 +139,18 @@ Null Values in Bigquery represents missing values. They are not 0, nor empty str
 clause will filter out those rows! If you want to check if a value is NULL or want to include them in your result set, use the IS operator.
 
 
+## Working with Dates 
 
+- Timestamp :- This represents an absolute point in time, typically including both date and time information down to fractional seconds. For example :- **2024-03-21 15:04:40.843619 UTC**. The method to the current timestamp CURRENT_TIMESTAMP()
+- DateTime :- 2024-02-19T15:04:07.798367
+- Date :- For example 2024-01-19. Method CURRENT_DATE
+- Time :- 05:07:18.237107
   
 
+Always use Timestamps unless you have a good reason to only need a date. And then extract the information from the Timestamp 
+
+
+## Type Casting 
+
+  
 
