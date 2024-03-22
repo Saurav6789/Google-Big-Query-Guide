@@ -152,5 +152,46 @@ Always use Timestamps unless you have a good reason to only need a date. And the
 
 ## Type Casting 
 
-  
+We can convert the values from one datatype to another datatype using the CAST() function.
+
+- **Implicit Casting/Coercion** :- Some of the data types like FLOATS, NUMERIC and INTs will be cast automatically when performing operations on them.
+- **Explicit casting** :- For converting other data types , we need to use the explicit casting, CAST() function for this.
+
+For examples :- 
+
+a) Cast from **STRING** to **INT** 
+  SELECT CAST(‘12’ AS INT64)
+
+b) Cast from **STRING** to **NUMERIC**
+SELECT CAST(‘32’ AS INT64) -- > This will work 
+SELECT CAST(‘Apple’ AS INT64) --> This will not work because the string is not in the right format.
+
+c) Cast from **NUMERIC** to **BOOL**
+SELECT CAST(10 AS BOOL)
+SELECT CAST(0 AS BOOL)
+
+d) Cast from **BOOL** to **NUMERIC**
+
+SELECT CAST(TRUE AS INT64)
+SELECT CAST(FALSE AS INT64)
+
+e) Cast from **STRING** to **DATE**
+
+SELECT CAST(‘2024-01-01’ AS DATE);
+
+f) Cast from **STRING** to **DATETIME**
+
+SELECT CAST(‘2024-01-01’ AS DATETIME);
+
+g) Cast from **TIMESTAMP** to **DATETIME**, **DATE**, **TIME**
+
+SELECT CURRENT_TIMESTAMP()
+
+SELECT CAST(CURRENT_TIMESTAMP() AS DATETIME)
+
+SELECT CAST(CURRENT_TIMESTAMP() AS DATE)
+
+SELECT CAST(CURRENT_TIMESTAMP() AS TIME)
+
+
 
