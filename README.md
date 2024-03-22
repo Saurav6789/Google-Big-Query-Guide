@@ -118,6 +118,28 @@ Please note that you will be provide with free 300$ credits and then you will be
   e) Clustering can be done to reduce the scan size, sorting the data in storage , works best for strings.
   
   f) In the Advanced options , we can also append or overwrite to the existing table. 
+
+
+  ## Data Structure Supported by Bigquery
+
+  - INT64 :- Integers from -10^19 to 10^19. Only integer type.
+  - FLOAT64 :- Real-valued numbers.
+  - NUMERIC :- Real-valued numbers: use for precision.
+  - BOOL :- Booleans. TRUE or FALSE (case insensitive).
+  - STRING :- Variable-length Unicode characters.
+  - TIMESTAMP :- Absolute point in time (incl timezone).
+  - GEOGRAPHY :- A point set on the Earth’s surface.
+  - Array :- An ordered list: [0,1,2,3,4]
+  - STRUCTS :- A group of fields in order.
+
+
+## Null Values in BigQuery 
+
+Null Values in Bigquery represents missing values. They are not 0, nor empty strings: they have no value.Comparisons with NULL will always return NULL: your WHERE
+clause will filter out those rows! If you want to check if a value is NULL or want to include them in your result set, use the IS operator.
+
+
+
   
 
 
