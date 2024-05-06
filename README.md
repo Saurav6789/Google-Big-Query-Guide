@@ -194,4 +194,37 @@ SELECT CAST(CURRENT_TIMESTAMP() AS DATE)
 SELECT CAST(CURRENT_TIMESTAMP() AS TIME)
 
 
+## BigQuery ML 
+
+Bigquery ML provides a large of machine learning algorithms for all types of ML usecases 
+
+- Classification
+  
+ a) logistic_reg( Logistic Regression)
+ 
+ b) random_forest_classifier (Random Forest)
+ 
+ c) boosted_tree_classifier
+ 
+ d) dnn_classifier (Deep Neural Network Classifier)
+
+- Regression
+  
+ a) linear_reg ( Linear Regression)
+ 
+ b) boosted_tree_regressor( Boosted Tree Regressor)
+ 
+ c) dnn_regressor (Deep Neural Netwrok Regressor)
+
+- Time Series
+  
+ a) arima :- Auto-Regressive Integrated Moving Average
+ 
+ b) ARIMAX :- ARIMA model with Exogenous Variables
+ 
+ c) DeepAR
+ 
+ d) Prophet
+ 
+ e) TensorFlow models
 
